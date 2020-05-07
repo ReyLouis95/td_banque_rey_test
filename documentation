@@ -1,0 +1,13 @@
+Documentation:
+
+Les classes métiers sont complètes
+
+Une banque contient une liste de clients.
+Un client contient une liste de comptes.
+J'ai rajouté la fonction ouvertureCompte dans la classe client.
+
+
+Acces a la base de données:
+
+La connexion se fait dans la classe MySqlConnection.
+Les requetes existent juste pour la classe client (pas eu le temps d'ecrire pour compte).
