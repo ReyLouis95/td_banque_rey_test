@@ -1,0 +1,83 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.2
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  jeu. 07 mai 2020 à 11:48
+-- Version du serveur :  10.4.10-MariaDB
+-- Version de PHP :  7.3.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données :  `banque_test`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `banque`
+--
+
+DROP TABLE IF EXISTS `banque`;
+CREATE TABLE IF NOT EXISTS `banque` (
+  `idCompte` int(11) NOT NULL,
+  `idClient` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `client`
+--
+
+DROP TABLE IF EXISTS `client`;
+CREATE TABLE IF NOT EXISTS `client` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(40) NOT NULL,
+  `adresse` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `client`
+--
+
+INSERT INTO `client` (`id`, `nom`, `adresse`) VALUES
+(1, 'LOUIS', 'NICE'),
+(2, 'joyeux', 'metz'),
+(3, 'a', 'a'),
+(4, 'a', 'a'),
+(5, 'a', 'a'),
+(6, 'a', 'a'),
+(7, 'a', 'a'),
+(8, 'a', 'a'),
+(9, 'a', 'a');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `compte`
+--
+
+DROP TABLE IF EXISTS `compte`;
+CREATE TABLE IF NOT EXISTS `compte` (
+  `id` int(11) NOT NULL,
+  `idClient` int(11) NOT NULL,
+  `soldeActuel` double NOT NULL,
+  `DecouvertAutorise` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
